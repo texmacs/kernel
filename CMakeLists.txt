@@ -3,6 +3,7 @@ cmake_minimum_required (VERSION 3.5)
 project (KERNEL CXX C) # check for C/C++ compiler
 
 set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_FLAGS "-Wno-deprecated-register")
 
 set (Kernel_Include_Dirs
   ${KERNEL_SOURCE_DIR}/src/Kernel/Containers/
