@@ -11,11 +11,11 @@
 
 #ifndef UNARY_FUNCTION_H
 #define UNARY_FUNCTION_H
-#include "tree.hpp"
+// #include "tree.hpp"
 
 #define TMPL template<typename T, typename S>
 
-class tree;
+// class tree;
 TMPL class unary_function_rep;
 TMPL class unary_function;
 TMPL bool is_nil (unary_function<T,S> l);

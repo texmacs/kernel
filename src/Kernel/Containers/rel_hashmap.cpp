@@ -111,18 +111,18 @@ rel_hashmap_rep<T,U>::change (hashmap<T,U> CH) {
   }
 }
 
-template <class T, class U> tm_ostream&
-operator << (tm_ostream& out, rel_hashmap<T,U> H) {
-  if (is_nil (H)) out << "(null)";
-  else {
-    while (!is_nil (H->next)) {
-      out << H->item << LF;
-      out << HRULE << LF;
-      H= H->next;
-    }
-    out << H->item << LF;
-  }
-  return out;
-}
+// template <class T, class U> tm_ostream&
+// operator << (tm_ostream& out, rel_hashmap<T,U> H) {
+//   if (is_nil (H)) out << "(null)";
+//   else {
+//     while (!is_nil (H->next)) {
+//       out << H->item << LF;
+//       out << HRULE << LF;
+//       H= H->next;
+//     }
+//     out << H->item << LF;
+//   }
+//   return out;
+// }
 
 #endif // defined REL_HASHMAP_CC

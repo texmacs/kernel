@@ -13,7 +13,7 @@
 #define HASHMAP_H
 #include "list.hpp"
 
-class tree;
+// class tree;
 template<class T> class list;
 template<class T,class U> class hashmap;
 template<class T,class U> class rel_hashmap;
@@ -21,7 +21,7 @@ template<class T,class U> class rel_hashmap_rep;
 template<class T,class U> class hashmap_iterator_rep;
 
 template<class T,class U> int N (hashmap<T,U> a);
-template<class T,class U> tm_ostream& operator << (tm_ostream& out, hashmap<T,U> h);
+// template<class T,class U> tm_ostream& operator << (tm_ostream& out, hashmap<T,U> h);
 template<class T,class U> hashmap<T,U> copy (hashmap<T,U> h);
 template<class T,class U> hashmap<T,U> changes (hashmap<T,U> p,hashmap<T,U> b);
 template<class T,class U> hashmap<T,U> invert (hashmap<T,U> p, hashmap<T,U> b);
@@ -34,7 +34,7 @@ template<class T, class U> struct hashentry {
   U im;
   hashentry<T,U> () { }
   hashentry<T,U> (int code, T key2, U im2);
-  operator tree ();
+//  operator tree ();
 };
 
 template<class T, class U> class hashmap_rep: concrete_struct {
@@ -64,7 +64,7 @@ public:
   friend class rel_hashmap_rep<T,U>;
   friend class hashmap_iterator_rep<T,U>;
   friend int N LESSGTR (hashmap<T,U> h);
-  friend tm_ostream& operator << LESSGTR (tm_ostream& out, hashmap<T,U> h);
+//  friend tm_ostream& operator << LESSGTR (tm_ostream& out, hashmap<T,U> h);
 
   // only for hashmap<string,tree>
   void write_back (T x, hashmap<T,U> base);
@@ -88,11 +88,11 @@ CONCRETE_TEMPLATE_2(hashmap,T,U);
   inline hashmap (U init, int n=1, int max=1):
     rep (tm_new<hashmap_rep<T,U> > (init, n, max)) {}
   // only for hashmap<string,tree>
-  hashmap (U init, tree t);
+  // hashmap (U init, tree t);
   // end only for hashmap<string,tree>
   inline U  operator [] (T x) { return rep->bracket_ro (x); }
   inline U& operator () (T x) { return rep->bracket_rw (x); }
-  operator tree ();
+  // operator tree ();
 };
 CONCRETE_TEMPLATE_2_CODE(hashmap,class,T,class,U);
 

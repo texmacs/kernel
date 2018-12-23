@@ -17,19 +17,19 @@
 * output and convertion
 ******************************************************************************/
 
-template<class T> tm_ostream&
-operator << (tm_ostream& out, list<T> l) {
-  out << "[";
-  if (!is_nil (l)) {
-    out << " " << l->item;
-    l=l->next;
-  }
-  while (!is_nil (l)) {
-    out << ", " << l->item;
-    l=l->next;
-  }
-  return out << " ]";
-}
+// template<class T> tm_ostream&
+// operator << (tm_ostream& out, list<T> l) {
+//   out << "[";
+//   if (!is_nil (l)) {
+//     out << " " << l->item;
+//     l=l->next;
+//   }
+//   while (!is_nil (l)) {
+//     out << ", " << l->item;
+//     l=l->next;
+//   }
+//   return out << " ]";
+// }
 
 template<class T> T&
 list<T>::operator [] (int i) {
@@ -38,14 +38,14 @@ list<T>::operator [] (int i) {
   return rep->next[i-1];
 }
 
-template<class T> list<T>::operator tree () {
-  list<T> l;
-  int i, n=N(*this);
-  tree t (TUPLE, n);
-  for (i=0, l=*this; i<n; i++, l=l->next)
-    t[i]= as_tree (l->item);
-  return t;
-}
+// template<class T> list<T>::operator tree () {
+//   list<T> l;
+//   int i, n=N(*this);
+//   tree t (TUPLE, n);
+//   for (i=0, l=*this; i<n; i++, l=l->next)
+//     t[i]= as_tree (l->item);
+//   return t;
+// }
 
 /******************************************************************************
 * insertion and suppression

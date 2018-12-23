@@ -22,14 +22,14 @@
 TMPL H::hashentry (int code2, T key2, U im2):
   code (code2), key (key2), im (im2) {}
 
-TMPL H::operator tree () {
-  return tree (ASSOCIATE, as_tree(key), as_tree(im)); }
+// TMPL H::operator tree () {
+//   return tree (ASSOCIATE, as_tree(key), as_tree(im)); }
 
-TMPL tm_ostream&
-operator << (tm_ostream& out, H h) {
-  out << h.key << "->" << h.im;
-  return out;
-}
+// TMPL tm_ostream&
+// operator << (tm_ostream& out, H h) {
+//   out << h.key << "->" << h.im;
+//   return out;
+// }
 
 TMPL bool
 operator == (H h1, H h2) {
@@ -135,31 +135,31 @@ hashmap_rep<T,U>::generate (void (*routine) (T)) {
   }
 }
 
-TMPL tm_ostream&
-operator << (tm_ostream& out, hashmap<T,U> h) {
-  int i= 0, j= 0, n= h->n, size= h->size;
-  out << "{ ";
-  for (; i<n; i++) {
-    list<hashentry<T,U> > l= h->a[i];
-    for (; !is_nil (l); l= l->next, j++) {
-      out << l->item;
-      if (j != size-1) out << ", ";
-    }
-  }
-  out << " }";
-  return out;
-}
+// TMPL tm_ostream&
+// operator << (tm_ostream& out, hashmap<T,U> h) {
+//   int i= 0, j= 0, n= h->n, size= h->size;
+//   out << "{ ";
+//   for (; i<n; i++) {
+//     list<hashentry<T,U> > l= h->a[i];
+//     for (; !is_nil (l); l= l->next, j++) {
+//       out << l->item;
+//       if (j != size-1) out << ", ";
+//     }
+//   }
+//   out << " }";
+//   return out;
+// }
 
-TMPL hashmap<T,U>::operator tree () {
-  int i=0, j=0, n=rep->n, size=rep->size;
-  tree t (COLLECTION, size);
-  for (; i<n; i++) {
-    list<hashentry<T,U> > l= rep->a[i];
-    for (; !is_nil (l); l= l->next, j++)
-      t[j]= (tree) l->item;
-  }
-  return t;
-}
+// TMPL hashmap<T,U>::operator tree () {
+//   int i=0, j=0, n=rep->n, size=rep->size;
+//   tree t (COLLECTION, size);
+//   for (; i<n; i++) {
+//     list<hashentry<T,U> > l= rep->a[i];
+//     for (; !is_nil (l); l= l->next, j++)
+//       t[j]= (tree) l->item;
+//   }
+//   return t;
+// }
 
 TMPL void
 hashmap_rep<T,U>::join (hashmap<T,U> h) {

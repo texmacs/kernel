@@ -27,11 +27,11 @@ public:
 
 template<class T> struct iterator {
   ABSTRACT_TEMPLATE(iterator,T);
-  operator tree ();
+//  operator tree ();
 };
 ABSTRACT_TEMPLATE_CODE(iterator,class,T);
 
-template<class T> tm_ostream& operator << (tm_ostream& out, iterator<T> it);
+// template<class T> tm_ostream& operator << (tm_ostream& out, iterator<T> it);
 
 template<class T, class U> iterator<T> iterate (hashmap<T,U> h);
 template<class T> iterator<T> iterate (hashset<T> h);

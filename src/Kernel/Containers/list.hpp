@@ -11,9 +11,9 @@
 
 #ifndef LIST_H
 #define LIST_H
-#include "tree.hpp"
+#include "basic.hpp"
 
-class tree;
+// class tree;
 template<class T> class list_rep;
 template<class T> class list;
 
@@ -28,7 +28,7 @@ template<class T> class list {
   inline list (T item1, T item2, list<T> next);
   inline list (T item1, T item2, T item3, list<T> next);
   T& operator [] (int i);
-  operator tree ();
+//  operator tree ();
   static list<T> init;
 
   friend bool is_atom LESSGTR (list<T> l);
@@ -72,7 +72,7 @@ TMPL list<T>  reverse (list<T> l);
 TMPL list<T>  remove (list<T> l, T what);
 TMPL bool     contains (list<T> l, T what);
 
-TMPL tm_ostream& operator << (tm_ostream& out, list<T> l);
+// TMPL tm_ostream& operator << (tm_ostream& out, list<T> l);
 TMPL list<T>& operator << (list<T>& l, T item);
 TMPL list<T>& operator << (list<T>& l1, list<T> l2);
 TMPL list<T>& operator >> (T item, list<T>& l);
@@ -83,6 +83,6 @@ TMPL bool     operator < (list<T> l1, list<T> l2);
 TMPL bool     operator <= (list<T> l1, list<T> l2);
 #undef TMPL
 
-#include "list.cpp"
+// #include "list.cpp"
 
 #endif // defined LIST_H

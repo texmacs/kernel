@@ -99,32 +99,32 @@ operator == (hashset<T> h1, hashset<T> h2) {
   return (N(h1)==N(h2)) && (h1<=h2);
 }
 
-template<class T> tm_ostream&
-operator << (tm_ostream& out, hashset<T> h) {
-  int i=0, j=0, n=h->n, size=h->size;
-  out << "{ ";
-  for (; i<n; i++) {
-    list<T> l=h->a[i];
-    for (; !is_nil (l); l=l->next, j++) {
-      out << l->item;
-      if (j!=size-1) out << ", ";
-    }
-  }
-  out << " }";
-  return out;
-}
+// template<class T> tm_ostream&
+// operator << (tm_ostream& out, hashset<T> h) {
+//   int i=0, j=0, n=h->n, size=h->size;
+//   out << "{ ";
+//   for (; i<n; i++) {
+//     list<T> l=h->a[i];
+//     for (; !is_nil (l); l=l->next, j++) {
+//       out << l->item;
+//       if (j!=size-1) out << ", ";
+//     }
+//   }
+//   out << " }";
+//   return out;
+// }
 
-template<class T>
-hashset<T>::operator tree () {
-  int i=0, j=0, n=this->rep->n, size=this->rep->size;
-  tree t (COLLECTION, size);
-  for (; i<n; i++) {
-    list<T> l=this->rep->a[i];
-    for (; !is_nil (l); l=l->next, j++)
-      t[j]= as_tree(l->item);
-  }
-  return t;
-}
+// template<class T>
+// hashset<T>::operator tree () {
+//   int i=0, j=0, n=this->rep->n, size=this->rep->size;
+//   tree t (COLLECTION, size);
+//   for (; i<n; i++) {
+//     list<T> l=this->rep->a[i];
+//     for (; !is_nil (l); l=l->next, j++)
+//       t[j]= as_tree(l->item);
+//   }
+//   return t;
+// }
 
 template<class T> hashset<T>&
 operator << (hashset<T>& h, T x) {

@@ -14,7 +14,7 @@
 #define ARRAY_H
 #include "basic.hpp"
 
-class tree;
+// class tree;
 template<class T> class array;
 template<class T> int N (array<T> a);
 template<class T> T*  A (array<T> a);
@@ -44,7 +44,7 @@ template<class T> class array {
   array (T x1, T x2, T x3, T x4);
   array (T x1, T x2, T x3, T x4, T x5);
   inline T& operator [] (int i) { return rep->a[i]; }
-  operator tree (); // defined in tree.hpp
+//  operator tree (); // defined in tree.hpp
 };
 CONCRETE_TEMPLATE_CODE(array,class,T);
 
@@ -53,7 +53,7 @@ TMPL inline int N (array<T> a) { return a->n; }
 TMPL inline T*  A (array<T> a) { return a->a; }
 TMPL inline array<T> copy (array<T> a) {
   return array<T> (a->a, a->n); }
-TMPL tm_ostream& operator << (tm_ostream& out, array<T> a);
+// TMPL tm_ostream& operator << (tm_ostream& out, array<T> a);
 TMPL array<T>& operator << (array<T>& a, T x);
 TMPL array<T>& operator << (array<T>& a, array<T> b);
 TMPL bool contains (T a, array<T> b);
