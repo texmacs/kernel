@@ -4,8 +4,6 @@
 *.dll
 *.exe
 *.dylib
-*.cmake
-!/cmake/*.cmake
 !/test/AssemblyTests.cmake
 *~
 *.pyc
