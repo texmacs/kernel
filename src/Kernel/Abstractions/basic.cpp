@@ -186,16 +186,23 @@ string the_exception;
 string the_report;
 string get_crash_report (const char* msg);
 
-// void
-// tm_throw (const char* msg) {
-//   the_exception= msg;
-//   the_report   = get_crash_report (msg);
-//   cout << "Throwing " << msg << LF;
-//   cout << "-------------------------------------------------\n";
-//   cout << the_report << LF;
-//   cout << "-------------------------------------------------\n";
-//   throw string (msg);
-// }
+string
+get_crash_report (const char* msg) {
+  string r;
+  r << "Error message:\n  " << msg << "\n";
+  return r;
+}
+
+void
+tm_throw (const char* msg) {
+   the_exception= msg;
+   the_report   = get_crash_report (msg);
+   // cout << "Throwing " << msg << LF;
+   // cout << "-------------------------------------------------\n";
+   // cout << the_report << LF;
+   // cout << "-------------------------------------------------\n";
+   throw string (msg);
+}
 
 // void
 // handle_exceptions () {

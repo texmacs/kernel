@@ -20,3 +20,22 @@ file (GLOB_RECURSE Kernel_SRCS
 include_directories(${Kernel_Include_Dirs})
 
 add_library(kernel STATIC ${Kernel_SRCS})
+
+### --------------------------------------------------------------------
+### Testing
+### --------------------------------------------------------------------
+include (CTest)
+set (GTEST_ROOT "${KERNEL_SOURCE_DIR}/3rdparty/benchmark/googletest/googletest")
+set (GTEST_INCLUDE_DIR ${GTEST_ROOT}/include)
+set (GTEST_LIBRARIES gtest gtest_main)
+set (GTEST_MAIN_LIBRARY gtest_main)
+set (GTEST_LIBRARY gtest)
+
+add_subdirectory (3rdparty/benchmark EXCLUDE_FROM_ALL)
+add_subdirectory (${GTEST_ROOT} EXCLUDE_FROM_ALL)
+find_package (GTest REQUIRED)
+
+enable_testing ()
+
+add_subdirectory (tests)
+add_subdirectory (benchmark)

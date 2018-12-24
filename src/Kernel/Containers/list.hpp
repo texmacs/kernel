@@ -83,6 +83,6 @@ TMPL bool     operator < (list<T> l1, list<T> l2);
 TMPL bool     operator <= (list<T> l1, list<T> l2);
 #undef TMPL
 
-// #include "list.cpp"
+#include "list.cpp"
 
 #endif // defined LIST_H
