@@ -10,11 +10,13 @@ set (Kernel_Include_Dirs
   ${KERNEL_SOURCE_DIR}/src/Kernel/Abstractions/
   ${KERNEL_SOURCE_DIR}/src/Kernel/Types/
   ${KERNEL_SOURCE_DIR}/src/System/Misc/
+  ${KERNEL_SOURCE_DIR}/src/Data/String/
 )
 
 file (GLOB_RECURSE Kernel_SRCS
   "${KERNEL_SOURCE_DIR}/src/Kernel/*.cpp"
   "${KERNEL_SOURCE_DIR}/src/System/*.cpp"
+  "${KERNEL_SOURCE_DIR}/src/Data/*.cpp"
 )
 
 include_directories(${Kernel_Include_Dirs})
