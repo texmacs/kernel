@@ -12,6 +12,8 @@ set (Kernel_Include_Dirs
   ${KERNEL_SOURCE_DIR}/src/System/Misc/
   ${KERNEL_SOURCE_DIR}/src/System/Files/
   ${KERNEL_SOURCE_DIR}/src/Data/String/
+  ${KERNEL_SOURCE_DIR}/src/Data/Drd/
+  ${KERNEL_SOURCE_DIR}/src/Data/Tree/
 )
 
 file (GLOB_RECURSE Kernel_SRCS

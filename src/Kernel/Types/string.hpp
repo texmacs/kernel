@@ -48,7 +48,7 @@ CONCRETE_CODE(string);
 
 extern inline int N (string a) { return a->n; }
 string   copy (string a);
-// tm_ostream& operator << (tm_ostream& out, string a);
+tm_ostream& operator << (tm_ostream& out, string a);
 string&  operator << (string& a, char);
 string&  operator << (string& a, string b);
 string   operator * (const char* a, string b);
