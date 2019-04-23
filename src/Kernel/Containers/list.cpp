@@ -17,19 +17,19 @@
 * output and convertion
 ******************************************************************************/
 
-// template<class T> tm_ostream&
-// operator << (tm_ostream& out, list<T> l) {
-//   out << "[";
-//   if (!is_nil (l)) {
-//     out << " " << l->item;
-//     l=l->next;
-//   }
-//   while (!is_nil (l)) {
-//     out << ", " << l->item;
-//     l=l->next;
-//   }
-//   return out << " ]";
-// }
+template<class T> tm_ostream&
+operator << (tm_ostream& out, list<T> l) {
+  out << "[";
+  if (!is_nil (l)) {
+    out << " " << l->item;
+    l=l->next;
+  }
+  while (!is_nil (l)) {
+    out << ", " << l->item;
+    l=l->next;
+  }
+  return out << " ]";
+}
 
 template<class T> T&
 list<T>::operator [] (int i) {

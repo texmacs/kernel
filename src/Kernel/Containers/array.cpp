@@ -114,18 +114,18 @@ operator != (array<T> a, array<T> b) {
   return false;
 }
 
-// template<class T> tm_ostream&
-// operator << (tm_ostream& out, array<T> a) {
-//   int i;
-//   
-//   if (N(a)==0) return out << "[ ]";
-//   out << "[ ";
-//   for (i=0; i<N(a)-1; i++)
-//     out << a[i] << ", ";
-//   if (N(a)!=0) out << a[i];
-//   out << " ]";
-//   return out;
-// }
+template<class T> tm_ostream&
+operator << (tm_ostream& out, array<T> a) {
+  int i;
+  
+  if (N(a)==0) return out << "[ ]";
+  out << "[ ";
+  for (i=0; i<N(a)-1; i++)
+    out << a[i] << ", ";
+  if (N(a)!=0) out << a[i];
+  out << " ]";
+  return out;
+}
 
 template<class T> array<T>&
 operator << (array<T>& a, T x) {

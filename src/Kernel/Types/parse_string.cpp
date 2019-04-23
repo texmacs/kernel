@@ -102,14 +102,14 @@ test (parse_string s, string what) {
   return s->test (what);
 }
 
-// tm_ostream&
-// operator << (tm_ostream& out, parse_string s) {
-//   list<string> l= s->l;
-//   list<int>    p= s->p;
-//   while (!is_nil (l)) {
-//     out << l->item (p->item, N(l->item));
-//     l= l->next;
-//     p= p->next;
-//   }
-//   return out;
-// }
+tm_ostream&
+operator << (tm_ostream& out, parse_string s) {
+  list<string> l= s->l;
+  list<int>    p= s->p;
+  while (!is_nil (l)) {
+    out << l->item (p->item, N(l->item));
+    l= l->next;
+    p= p->next;
+  }
+  return out;
+}

@@ -10,6 +10,7 @@ set (Kernel_Include_Dirs
   ${KERNEL_SOURCE_DIR}/src/Kernel/Abstractions/
   ${KERNEL_SOURCE_DIR}/src/Kernel/Types/
   ${KERNEL_SOURCE_DIR}/src/System/Misc/
+  ${KERNEL_SOURCE_DIR}/src/System/Files/
   ${KERNEL_SOURCE_DIR}/src/Data/String/
 )
 

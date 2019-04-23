@@ -1,4 +1,3 @@
-
 /******************************************************************************
 * MODULE     : basic.cpp
 * DESCRIPTION: fast global new and delete
@@ -9,6 +8,7 @@
 * in the root directory or <http://www.gnu.org/licenses/gpl-3.0.html>.
 ******************************************************************************/
 
+#include "basic.hpp"
 #include "string.hpp"
 // #include "analyze.hpp"
 // #include "scheme.hpp"
@@ -228,27 +228,27 @@ new_type_identifier () {
 
 static int current_indent= 0;
 
-// tm_ostream&
-// operator << (tm_ostream& out, display_control ctrl) {
-//   int i;
-//   switch (ctrl) {
-//   case INDENT:
-//     out << "  ";
-//     current_indent += 2;
-//     break;
-//   case UNINDENT:
-//     out << "\b\b";
-//     current_indent -= 2;
-//     break;
-//   case HRULE:
-//     for (i=current_indent; i<78; i++) out << "-";
-//   case LF:
-//     out << "\n";
-//     for (i=0; i<current_indent; i++) out << " ";
-//     break;    
-//   }
-//   return out;
-// }
+tm_ostream&
+operator << (tm_ostream& out, display_control ctrl) {
+  int i;
+  switch (ctrl) {
+  case INDENT:
+    out << "  ";
+    current_indent += 2;
+    break;
+  case UNINDENT:
+    out << "\b\b";
+    current_indent -= 2;
+    break;
+  case HRULE:
+    for (i=current_indent; i<78; i++) out << "-";
+  case LF:
+    out << "\n";
+    for (i=0; i<current_indent; i++) out << " ";
+    break;    
+  }
+  return out;
+}
 
 /******************************************************************************
 * Various TeXmacs blends

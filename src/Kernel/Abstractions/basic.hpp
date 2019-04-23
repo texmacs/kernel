@@ -12,6 +12,7 @@
 #ifndef BASIC_H
 #define BASIC_H
 #include "fast_alloc.hpp"
+#include "tm_ostream.hpp"
 #include <math.h>
 
 #ifdef HAVE_INTPTR_T
@@ -104,8 +105,8 @@ void handle_exceptions ();
 void debug_message (string channel, string msg);
 // void debug_formatted (string channel, tree msg);
 // tree get_debug_messages (string kind, int max_number);
-void clear_debug_messages ();
-void clear_debug_messages (string channel);
+// void clear_debug_messages ();
+// void clear_debug_messages (string channel);
 
 /******************************************************************************
 * miscellaneous routines
@@ -136,7 +137,7 @@ inline SI as_int (double x) { return (SI) floor (x + 0.5); }
 inline double tm_round (double x) { return floor (x + 0.5); }
 
 enum display_control { INDENT, UNINDENT, HRULE, LF };
-// tm_ostream& operator << (tm_ostream& out, display_control ctrl);
+tm_ostream& operator << (tm_ostream& out, display_control ctrl);
 
 bool gui_is_x ();
 bool gui_is_qt ();
