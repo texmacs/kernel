@@ -48,3 +48,16 @@ TEST (string, string_union) {
   ASSERT_TRUE (string_union ("", "abc") == string("abc"));
   ASSERT_TRUE (string_union ("Hello World", "eo") == string ("Hll Wrldeo"));
 }
+
+TEST (string, starts) {
+  ASSERT_TRUE (starts ("abc_def", "abc"));
+  ASSERT_FALSE (starts ("abc_def", "def"));
+  ASSERT_TRUE (starts ("abc", ""));
+  ASSERT_TRUE (starts ("", ""));
+}
+
+TEST (string, ends) {
+  ASSERT_TRUE (ends ("abc_def", "def"));
+  ASSERT_TRUE (ends ("abc_def", ""));
+  ASSERT_FALSE (ends ("abc_def", "de"));
+}
