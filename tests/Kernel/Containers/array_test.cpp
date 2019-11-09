@@ -1,7 +1,7 @@
 /******************************************************************************
-* MODULE     : list_test.cpp
-* DESCRIPTION: test on linked lists with reference counting
-* COPYRIGHT  : (C) 2018 Darcy Shen
+* MODULE     : array_test.cpp
+* DESCRIPTION: test on array
+* COPYRIGHT  : (C) 2018 Yuhui Liu
 *******************************************************************************
 * This software falls under the GNU general public license version 3 or later.
 * It comes WITHOUT ANY WARRANTY WHATSOEVER. For details, see the file LICENSE
