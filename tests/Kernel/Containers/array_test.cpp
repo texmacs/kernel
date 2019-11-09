@@ -1,7 +1,7 @@
 /******************************************************************************
 * MODULE     : array_test.cpp
 * DESCRIPTION: test on array
-* COPYRIGHT  : (C) 2018 Yuhui Liu
+* COPYRIGHT  : (C) 2019  Yuhui Liu
 *******************************************************************************
 * This software falls under the GNU general public license version 3 or later.
 * It comes WITHOUT ANY WARRANTY WHATSOEVER. For details, see the file LICENSE
@@ -13,19 +13,19 @@
 #include "string.hpp"
 
 static array<int> gen_array(int n) {
-  auto normal = array<int>();
-  for(int i=1;i<=n;i++){
+  auto normal= array<int>();
+  for (auto i=1;i<=n;i++){
       normal << i;
   }
   return normal;
 }
 
-auto zero_elem = array<int> ();
-auto one_elem = append(1,zero_elem);
-auto two_elem = array<int> (1,2);
-auto three_elem = array<int> (1,2,3);
-auto four_elem = array<int> (1,2,3,4);
-auto five_elem = array<int> (1,2,3,4,5);
+auto zero_elem= array<int> ();
+auto one_elem= append(1,zero_elem);
+auto two_elem= array<int> (1,2);
+auto three_elem= array<int> (1,2,3);
+auto four_elem= array<int> (1,2,3,4);
+auto five_elem= array<int> (1,2,3,4,5);
 
 TEST (array, access) {
   EXPECT_EQ (five_elem[0], 1);
@@ -37,8 +37,8 @@ TEST (array, access) {
 }
 
 TEST (array, multiply) {
-    auto mulu4 = array<int> ();
-    for(int i =1; i< 6; i++){
+    auto mulu4= array<int> ();
+    for (auto i=1; i<6; i++){
         mulu4 << (i * 4);
     }
     EXPECT_EQ (mulu4, five_elem * 4);
@@ -46,8 +46,8 @@ TEST (array, multiply) {
 }
 
 TEST (array, divide) {
-    auto mulu4 = array<int> ();
-    for(int i = 1 ;i < 6;i++){
+    auto mulu4= array<int> ();
+    for(auto i=1; i<6; i++){
         mulu4 << (i * 4);
     }
     EXPECT_EQ (mulu4 / 4, five_elem);
@@ -66,7 +66,7 @@ TEST (array, size) {
     EXPECT_EQ (N (three_elem),3);
     EXPECT_EQ (N (four_elem),4);
     EXPECT_EQ (N (five_elem),5);
-    for(auto i = 6;i < 200 ;i++){
+    for (auto i=6; i<200; i++){
         auto array_test = gen_array (i);
         EXPECT_EQ ( N (array_test), i);
     }
@@ -91,10 +91,10 @@ TEST (array, append) {
 
     auto one2ten = gen_array (10);
     auto six2ten = array<int> (6,7,8,9,10);
-    for(int i=1; i<=10; i++){
+    for (auto i=1; i<=10; i++){
         EXPECT_EQ (one2ten[i-1],i);
     }
-    EXPECT_EQ (one2ten, append (five_elem,six2ten));
+    EXPECT_EQ (one2ten, append (five_elem, six2ten));
 }
 
 TEST (array, reverse) {
